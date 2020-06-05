@@ -9,8 +9,8 @@ on:
 
 jobs:
   build:
-  name: Job_Deloy_Surge
-  runs-on: Ubuntu-latest
+    name: Job_Deploy_Surge
+    runs-on: Ubuntu-latest
   steps:
     uses: actions/checkout@v2
     name: Setup Node
