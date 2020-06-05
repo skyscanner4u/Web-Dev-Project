@@ -8,14 +8,15 @@ on:
 
 
 jobs:
-  steps:
-    uses: actions/checkout@v2
-    name: Setup Node
-    uses: actions/setup-node@v2-beta
-    with:
-      node-version: '12'
-    name: Setup Surge
-    run: npm install --global Surge
-    name: execute Deployment with Surge
-    run: surge ./ Web-dev-proj.surge.sh --token {{secrets.WEB_DEV_PROJECT_SURGE_TOKEN}}
+  - name: Upload a Build Artifact
+  uses: actions/upload-artifact@v2
+  uses: actions/checkout@v2
+  - name: Setup Node
+  uses: actions/setup-node@v2-beta
+  with:
+    node-version: '12'
+  - name: Setup Surge
+  run: npm install --global Surge
+  - name: execute Deployment with Surge
+  run: surge ./ Web-dev-proj.surge.sh --token {{secrets.WEB_DEV_PROJECT_SURGE_TOKEN}}
 
