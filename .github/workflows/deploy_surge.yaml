@@ -12,13 +12,13 @@ jobs:
     name: Job_Deploy_Surge
     runs-on: Ubuntu-latest
   steps:
-    uses: actions/checkout@v2
-    name: Setup Node
-    uses: actions/setup-node@v2-beta
-    with:
-      node-version: '12'
-    name: Setup Surge
-    run: npm install --global Surge
-    name: execute Deployment with Surge
-    run: surge ./ Web-dev-proj.surge.sh --token {{secrets.WEB_DEV_PROJECT_SURGE_TOKEN}}
+      uses: actions/checkout@v2
+      name: Setup Node
+      uses: actions/setup-node@v2-beta
+      with:
+          node-version: '12'
+      name: Setup Surge
+      run: npm install --global Surge
+      name: execute Deployment with Surge
+      run: surge ./ Web-dev-proj.surge.sh --token {{secrets.WEB_DEV_PROJECT_SURGE_TOKEN}}
 
